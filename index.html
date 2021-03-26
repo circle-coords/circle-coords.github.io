@@ -31,10 +31,18 @@
                     <input type="text" name="Before" id="input-before" placeholder="Place text here...">
                     <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The value placed before the coordinates. Use "%s" to indicate an auto-incrementing variable. This may be used to create things such as animations.'>
                 </li>
-                <li>
-                    <label for="input-increment-b">Variable auto-increment (before)</label><br/>
-                    <input type="number" name="Auto-Increment" id="input-increment-b" value="1" step="1">
-                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value before field gets replaced with an auto-incremented number, multiplied by this value.'>
+                <li class="double-input">
+                    <div>
+                        <label for="input-increment-b">Variable auto-increment (before)</label><br/>
+                        <input type="number" name="Auto-Increment" id="input-increment-b" value="1" step="1">
+                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value before field gets replaced with an auto-incremented number, multiplied by this value.'>
+                    </div>
+                    <div>
+                        <label for="input-var-start-b">Variable initial value (before)</label><br/>
+                        <input type="number" name="Auto-Increment" id="input-var-start-b" value="0" step="1">
+                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value before field gets replaced with an auto-incremented number, multiplied by this value.'>
+                    </div>
+                    
                 </li>
                 <li>
                     <label for="input-points">Number of points</label><br/>
@@ -56,23 +64,34 @@
                     <input type="text" name="After" id="input-after" placeholder="Place text here...">
                     <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The value placed after the coordinates. Use "%s" to indicate an auto-incrementing variable. This may be used to create things such as animations.'>
                 </li>
-                <li>
-                    <label for="input-increment-a">Variable auto-increment (after)</label><br/>
-                    <input type="number" name="Auto-Increment" id="input-increment-a" value="1" step="1">
-                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value after field gets replaced with an auto-incremented number, multiplied by this value.'>
+                <li class="double-input">
+                    <div>
+                        <label for="input-increment-a">Variable auto-increment (after)</label><br/>
+                        <input type="number" name="Auto-Increment" id="input-increment-a" value="1" step="1">
+                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value after field gets replaced with an auto-incremented number, multiplied by this value.'>
+                    </div>
+                    <div>
+                        <label for="input-var-start-a">Variable initial value (after)</label><br/>
+                        <input type="number" name="Auto-Increment" id="input-var-start-a" value="0" step="1">
+                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value after field gets replaced with an auto-incremented number, multiplied by this value.'>
+                    </div>
+                    
                 </li>
             </ul>
         </div>
         <output class="col2">
             <div class="output-label">
-                <button id="copy">Copy</button>
                 <div>
+                    <button id="copy">Copy</button>
+                    <label for="copy" id="copy-indicator" class="hidden">Copied!</label>
+                </div>
+                <div>
+                    <button class="hidden" id="update">Update</button>
                     <input type="checkbox" name="Auto-Update" id="auto-update" checked>
                     <label for="Auto-Update">Update automatically?</label>
-                    <button id="update">Update</button>
                 </div>
             </div>
-            <textarea id="output" readonly></textarea>
+            <textarea id="output" readonly wrap="off" rows="99"></textarea>
         </output>
     </main>
     <footer>© 2021 joker876. All rights reserved.</footer>

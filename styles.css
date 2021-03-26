@@ -28,6 +28,10 @@ body {
     background: var(--col-bg);
     height: 100vh;
 }
+.hidden {
+    opacity: 0%;
+    visibility: hidden;
+}
 
 /*  
 ======================
@@ -71,8 +75,8 @@ main {
 .col1, .col2 {
     padding: 2rem;
     width: 50%;
-    height: 87vh;
-    margin: 1rem 0 8rem 0;
+    height: 85vh;
+    margin: 1rem 0 1rem 0;
 }
 .col1 {
     border-right: 1px solid var(--col-bg3);
@@ -89,6 +93,16 @@ main {
 }
 .col1 ul {
     list-style-type: none;
+}
+.double-input {
+    display: flex;
+    flex-direction: row;
+}
+/* .double-input div:nth-of-type(2) {
+    margin-left: 1rem;
+} */
+.double-input div {
+    width: 50%;
 }
 input {
     margin: 0.2rem 0 0.7rem;
@@ -141,26 +155,35 @@ label {
     border: 1px solid var(--col-acc2);
     background-color: var(--col-bg3);
 }
+.output-label button:active {
+    background-color: lime;
+    color: black;
+}
 .output-label input[type="checkbox"] {
     cursor: pointer;
 }
 #update {
-    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+}
+#copy-indicator {
+    color: lime;
+    margin-left: 10px;
+    transition: all 0.2s ease;
 }
 #output {
+    resize: none;
     background-color: var(--col-bg);
     border: 1px solid var(--col-bg3);
     border-radius: 4px;
     padding: 0.5rem;
     width: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
     color: white;
     font-family: 'Fira Mono', monospace;
     font-size: 0.9rem;
     min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
     max-height: 100%;
-    min-height: max-content;
 }
 
 /*  
