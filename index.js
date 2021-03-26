@@ -21,14 +21,12 @@ function updateOutput() {
     console.log('hi');
     let ret = [];
     for (let i = 0; i < points.value; i++) {
-        let [x, z] = findCoords(radius.value, 360/points.value*i);
-        console.log(x, z);
+        let [x, z] = findCoords(radius.value, (2 * Math.PI / points.value) * i);
         ret.push(
             before.value.replace(/%s/g, i*incrementBefore.value)+' '+
             `~${x != 0 ? x : ''} ~${yValue.value != 0 ? yValue.value : ''} ~${z != 0 ? z : ''}` +
             after.value.replace(/%s/g, i*incrementAfter.value)+' '
         )
-        console.log(ret[i]);
     }
     output.innerHTML = ret.join('\n');
 }
