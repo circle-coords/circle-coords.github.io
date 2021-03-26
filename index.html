@@ -40,7 +40,7 @@
                     <div>
                         <label for="input-var-start-b">Variable initial value (before)</label><br/>
                         <input type="number" name="Auto-Increment" id="input-var-start-b" value="0" step="1">
-                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value before field gets replaced with an auto-incremented number, multiplied by this value.'>
+                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value before field gets replaced with an auto-incremented number, added to this value.'>
                     </div>
                     
                 </li>
@@ -73,7 +73,7 @@
                     <div>
                         <label for="input-var-start-a">Variable initial value (after)</label><br/>
                         <input type="number" name="Auto-Increment" id="input-var-start-a" value="0" step="1">
-                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value after field gets replaced with an auto-incremented number, multiplied by this value.'>
+                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value after field gets replaced with an auto-incremented number, added to this value.'>
                     </div>
                     
                 </li>
@@ -87,11 +87,13 @@
                 </div>
                 <div>
                     <button class="hidden" id="update">Update</button>
-                    <input type="checkbox" name="Auto-Update" id="auto-update" checked>
-                    <label for="Auto-Update">Update automatically?</label>
+                    <div>
+                        <input type="checkbox" name="Auto-Update" id="auto-update" checked>
+                        <label for="Auto-Update">Update automatically?</label>
+                    </div>
                 </div>
             </div>
-            <textarea id="output" readonly wrap="off" rows="99"></textarea>
+            <textarea id="output" readonly wrap="off" rows="20"></textarea>
         </output>
     </main>
     <footer>© 2021 joker876. All rights reserved.</footer>

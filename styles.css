@@ -76,10 +76,30 @@ main {
     padding: 2rem;
     width: 50%;
     height: 85vh;
-    margin: 1rem 0 1rem 0;
+    margin: 1rem 0;
 }
 .col1 {
     border-right: 1px solid var(--col-bg3);
+}
+@media screen and (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+    .col1, .col2 {
+        margin: 3rem 0;
+        padding: 0 2rem;
+        width: 100%;
+        border: none;
+        height: 100%;
+    }
+    .col1 {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--col-bg3);
+    }
+    .col2 {
+        margin-top: 0;
+    }
 }
 
 /*  
