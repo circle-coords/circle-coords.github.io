@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Coords</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href="styles.css" />
+    <link rel="icon" href="favicon.png" />
+    <script type="module" src="index.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="favicon.png" alt="Logo">
+            <span class="title">Circle Coords</span>
+        </div>
+    </header>
+    <main>
+        <div class="col1">
+            <ul>
+                
+                <li>
+                    <label for="input-before">Value before</label><br/>
+                    <input type="text" name="Before" id="input-before" placeholder="Place text here...">
+                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The value placed before the coordinates. Use "%s" to indicate an auto-incrementing variable. This may be used to create things such as animations.'>
+                </li>
+                <li>
+                    <label for="input-increment-b">Variable auto-increment (before)</label><br/>
+                    <input type="number" name="Auto-Increment" id="input-increment-b" value="1" step="1">
+                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value before field gets replaced with an auto-incremented number, multiplied by this value.'>
+                </li>
+                <li>
+                    <label for="input-points">Number of points</label><br/>
+                    <input type="number" name="Number of Points" id="input-points" value="16" step="1" min="1">
+                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The number of points the circle contains. For best effects, use a multiple of 4.'>
+                </li>
+                <li>
+                    <label for="input-radius">Radius</label><br/>
+                    <input type="number" name="Radius" id="input-radius" value="1" step="0.01" min="0.01">
+                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The radius of the circle.'>
+                </li>
+                <li>
+                    <label for="input-y">Y elevation</label><br/>
+                    <input type="number" name="Y value" id="input-y" value="0" step="0.01">
+                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The Y value used in the coordinates.'>
+                </li>
+                <li>
+                    <label for="input-after">Value after</label><br/>
+                    <input type="text" name="After" id="input-after" placeholder="Place text here...">
+                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The value placed after the coordinates. Use "%s" to indicate an auto-incrementing variable. This may be used to create things such as animations.'>
+                </li>
+                <li>
+                    <label for="input-increment-a">Variable auto-increment (after)</label><br/>
+                    <input type="number" name="Auto-Increment" id="input-increment-a" value="1" step="1">
+                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value after field gets replaced with an auto-incremented number, multiplied by this value.'>
+                </li>
+            </ul>
+        </div>
+        <output class="col2">
+            <div class="output-label">
+                <button id="copy">Copy</button>
+                <div>
+                    <input type="checkbox" name="Auto-Update" id="auto-update" checked>
+                    <label for="Auto-Update">Update automatically?</label>
+                    <button id="update">Update</button>
+                </div>
+            </div>
+            <textarea id="output" readonly></textarea>
+        </output>
+    </main>
+    <footer>© 2021 joker876. All rights reserved.</footer>
+</body>
+
+</html>
