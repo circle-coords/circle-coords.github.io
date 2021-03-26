@@ -23,9 +23,9 @@ function updateOutput() {
     for (let i = 0; i < points.value; i++) {
         let [x, z] = findCoords(radius.value, (2 * Math.PI / points.value) * i);
         ret.push(
-            before.value.replace(/%s/g, i*incrementBefore.value)+' '+
+            (before && before.value ? before.value.replace(/%s/g, i * incrementBefore.value) + ' ' : '') +
             `~${x != 0 ? x : ''} ~${yValue.value != 0 ? yValue.value : ''} ~${z != 0 ? z : ''}` +
-            after.value.replace(/%s/g, i*incrementAfter.value)+' '
+            (after && after.value ? after.value.replace(/%s/g, i * incrementAfter.value) + ' ' : '')
         )
     }
     output.innerHTML = ret.join('\n');
@@ -33,7 +33,7 @@ function updateOutput() {
 updateOutput();
 
 function roundToPlaces(num, places) {
-    return Math.round(num*Math.pow(10, places))/Math.pow(10, places)
+    return Math.round(num * Math.pow(10, places)) / Math.pow(10, places)
 }
 
 function findCoords(radius, angle) {
