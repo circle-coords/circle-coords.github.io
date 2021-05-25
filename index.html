@@ -25,58 +25,56 @@
     </header>
     <main>
         <div class="col1">
+            <div class="input-label">
+                <button class="dangerous" id="reset">Reset</button>
+            </div>
             <ul>
                 <li>
                     <label for="input-before">Value before</label><br/>
                     <input type="text" name="Before" id="input-before" placeholder="Place text here...">
-                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The value placed before the coordinates. Use "%s" to indicate an auto-incrementing variable. This may be used to create things such as animations.'>
                 </li>
                 <li class="double-input">
                     <div>
                         <label for="input-increment-b">Variable auto-increment (before)</label><br/>
                         <input type="number" name="Auto-Increment" id="input-increment-b" value="1" step="1">
-                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value before field gets replaced with an auto-incremented number, multiplied by this value.'>
                     </div>
                     <div>
                         <label for="input-var-start-b">Variable initial value (before)</label><br/>
                         <input type="number" name="Auto-Increment" id="input-var-start-b" value="0" step="1">
-                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value before field gets replaced with an auto-incremented number, added to this value.'>
                     </div>
                     
                 </li>
                 <li>
                     <label class="required" for="input-points">Number of points</label><br/>
                     <input type="number" name="Number of Points" id="input-points" value="16" step="1" min="1">
-                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The number of points the circle contains. For best effects, use a multiple of 4.'>
                 </li>
                 <li>
                     <label class="required"  for="input-radius">Radius</label><br/>
                     <input type="number" name="Radius" id="input-radius" value="1" step="0.01" min="0.01">
-                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The radius of the circle.'>
                 </li>
                 <li>
                     <label class="required"  for="input-y">Y elevation</label><br/>
                     <input type="number" name="Y value" id="input-y" value="0" step="0.01">
-                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The Y value used in the coordinates.'>
                 </li>
                 <li>
                     <label for="input-after">Value after</label><br/>
                     <input type="text" name="After" id="input-after" placeholder="Place text here...">
-                    <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='The value placed after the coordinates. Use "%s" to indicate an auto-incrementing variable. This may be used to create things such as animations.'>
                 </li>
                 <li class="double-input">
                     <div>
                         <label for="input-increment-a">Variable auto-increment (after)</label><br/>
                         <input type="number" name="Auto-Increment" id="input-increment-a" value="1" step="1">
-                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value after field gets replaced with an auto-incremented number, multiplied by this value.'>
                     </div>
                     <div>
                         <label for="input-var-start-a">Variable initial value (after)</label><br/>
                         <input type="number" name="Auto-Increment" id="input-var-start-a" value="0" step="1">
-                        <img class="help-icon" src="questionmark circled.png" alt="circled questionmark" title='"%s" in value after field gets replaced with an auto-incremented number, added to this value.'>
                     </div>
                 </li>
             </ul>
+            <div class="hidden" id="explanations">
+                <h2>What is this field:</h2>
+                <span id="explanation-container"></span>
+            </div>
         </div>
         <output class="col2">
             <div class="output-label">

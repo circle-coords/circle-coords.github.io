@@ -5,6 +5,8 @@
     --col-bg3: #323232;
     --col-acc: #444;
     --col-acc2: #4a4a4a;
+    --green: #19b819;
+    --state-shadow: 0 0 3px 2px var(--green);
 }
 /* normalize margins and paddings */
 * {
@@ -32,7 +34,18 @@ body {
     opacity: 0%;
     visibility: hidden;
 }
-
+.code {
+    font-family: 'Fira Mono', monospace;
+    padding: 0px 0.3rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--col-acc);
+    border-radius: 4px;
+}
+/* hover and focus effect for buttons and inputs */
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: var(--state-shadow);
+}
 /*  
 ======================
         Header
@@ -77,6 +90,8 @@ main {
     width: 50%;
     height: 85vh;
     margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
 }
 .col1 {
     border-right: 1px solid var(--col-bg3);
@@ -102,6 +117,53 @@ main {
     }
 }
 
+/*  
+======================
+        Labels
+======================
+*/
+.output-label, .input-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+.output-label button, .input-label button {
+    width: max-content;
+    height: max-content;
+    padding: 0.2rem 0.3rem;
+    border-radius: 4px;
+    border: 1px solid var(--col-acc);
+    background-color: var(--col-bg2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.input-label {
+    justify-content: flex-end;
+}
+.output-label div {
+    display: flex;
+}
+.output-label button:hover, .input-label button:hover {
+    border: 1px solid var(--col-acc2);
+    background-color: var(--col-bg3);
+}
+.output-label button.dangerous:hover,
+.input-label button.dangerous:hover {
+    background-color: #FF000050;
+}
+.output-label button:active {
+    background-color: var(--green);
+    color: black;
+}
+.input-label button.dangerous:active {
+    background-color: red;
+    color: black;
+}
+.output-label input[type="checkbox"] {
+    cursor: pointer;
+    margin-right: 4px;
+}
 /*  
 ======================
         Inputs
@@ -150,9 +212,28 @@ label {
     font-size: 0.9rem;
     font-weight: 200;
 }
-.help-icon {
-    width: 0.8rem;
-    cursor: help;
+
+/*  
+============================
+        Explanations
+============================
+*/
+#explanations {
+    margin-top: 5rem;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 200;
+}
+#explanations h2 {
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+#explanation-container {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 /*  
@@ -160,33 +241,6 @@ label {
         Output
 ======================
 */
-.output-label {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.4rem;
-}
-.output-label button {
-    width: max-content;
-    height: max-content;
-    padding: 0.2rem 0.3rem;
-    border-radius: 4px;
-    border: 1px solid var(--col-acc);
-    background-color: var(--col-bg2);
-    color: white;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-.output-label button:hover {
-    border: 1px solid var(--col-acc2);
-    background-color: var(--col-bg3);
-}
-.output-label button:active {
-    background-color: lime;
-    color: black;
-}
-.output-label input[type="checkbox"] {
-    cursor: pointer;
-}
 #update {
     margin-right: 0.6rem;
 }
